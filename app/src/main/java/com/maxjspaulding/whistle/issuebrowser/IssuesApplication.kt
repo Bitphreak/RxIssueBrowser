@@ -1,13 +1,11 @@
 package com.maxjspaulding.whistle.issuebrowser
 
 import android.app.Activity
+import android.app.Fragment
 import com.maxjspaulding.whistle.issuebrowser.di.DaggerAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.android.*
 
-class IssuesApplication : DaggerApplication(), HasActivityInjector {
+class IssuesApplication : DaggerApplication(), HasActivityInjector, HasFragmentInjector {
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
         return DaggerAppComponent.builder().create(this)
@@ -17,4 +15,7 @@ class IssuesApplication : DaggerApplication(), HasActivityInjector {
         return super.activityInjector()
     }
 
+    override fun fragmentInjector(): DispatchingAndroidInjector<Fragment> {
+        return super.fragmentInjector()
+    }
 }
