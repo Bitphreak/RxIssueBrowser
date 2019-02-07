@@ -13,6 +13,7 @@ import javax.inject.Singleton
         AndroidSupportInjectionModule::class,
         AppModule::class,
         ActivityModule::class,
+        EpoxyModule::class,
         NetworkModule::class
     ]
 )
