@@ -1,5 +1,6 @@
 package com.maxjspaulding.whistle.issuebrowser.di
 
+import com.maxjspaulding.whistle.issuebrowser.CommentListFragment
 import com.maxjspaulding.whistle.issuebrowser.IssueListFragment
 import com.maxjspaulding.whistle.issuebrowser.MainActivity
 import dagger.Module
@@ -15,4 +16,8 @@ internal abstract class ActivityModule {
 
     @ContributesAndroidInjector
     internal abstract fun contributesIssueListFragment(): IssueListFragment
+
+    @ContributesAndroidInjector
+    internal abstract fun contributesCommentListFragment(): CommentListFragment
+
 }
